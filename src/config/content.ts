@@ -12,9 +12,9 @@ export const PROFILE = {
   initials: "SS",
   role: { en: "Software Developer", pt: "Desenvolvedor de Software", es: "Desarrollador de Software" } as Localized,
   bio: {
-    en: "I build software where AI does real work — agentic systems, developer tools and precise, well-crafted interfaces.",
-    pt: "Construo software em que a IA trabalha de verdade — sistemas agênticos, ferramentas para desenvolvedores e interfaces precisas e bem-acabadas.",
-    es: "Construyo software en el que la IA trabaja de verdad — sistemas agénticos, herramientas para desarrolladores e interfaces precisas y bien acabadas.",
+    en: "I build full-stack web apps end to end — real-time systems, data-driven products and precise, well-crafted interfaces.",
+    pt: "Construo aplicações web full-stack de ponta a ponta — sistemas em tempo real, produtos guiados por dados e interfaces precisas e bem-acabadas.",
+    es: "Construyo aplicaciones web full-stack de punta a punta — sistemas en tiempo real, productos basados en datos e interfaces precisas y bien acabadas.",
   } as Localized,
   location: {
     city: "Parnaíba, PI",
@@ -42,9 +42,9 @@ export const PROFILE = {
   /** Parágrafos da página Sobre (um item por parágrafo); vazio = "aguardando dados". */
   about: [
     {
-      en: "I'm a software engineer based in Parnaíba, Brazil, working where code and language models meet. I like building agentic systems — software that doesn't just answer, but plans, uses tools and gets tasks done — and the tools that make that work faster for other developers.",
-      pt: "Sou engenheiro de software em Parnaíba, no Piauí, e trabalho onde código e modelos de linguagem se encontram. Gosto de construir sistemas agênticos — software que não só responde, mas planeja, usa ferramentas e conclui tarefas — e as ferramentas que tornam esse trabalho mais rápido para outros desenvolvedores.",
-      es: "Soy ingeniero de software en Parnaíba, Brasil, y trabajo donde el código y los modelos de lenguaje se encuentran. Me gusta construir sistemas agénticos — software que no solo responde, sino que planifica, usa herramientas y completa tareas — y las herramientas que hacen ese trabajo más rápido para otros desarrolladores.",
+      en: "I'm a full-stack developer based in Parnaíba, Brazil. I build web products end to end — database, API, real-time layer and interface — and I enjoy the hard parts: a self-hosted media server for voice and screen sharing, reminders that run at zero cost, each user's data isolated at the database level. I've also spent almost two years in technical support, solving real users' problems every shift, and that shapes how I build.",
+      pt: "Sou desenvolvedor full-stack em Parnaíba, no Piauí. Construo produtos web de ponta a ponta — banco de dados, API, camada de tempo real e interface — e gosto das partes difíceis: um servidor de mídia próprio para voz e transmissão de tela, lembretes que rodam com custo zero, os dados de cada usuário isolados no próprio banco. Também passei quase dois anos no suporte técnico, resolvendo problemas de usuários reais a cada plantão, e isso molda o jeito como eu construo.",
+      es: "Soy desarrollador full-stack en Parnaíba, Brasil. Construyo productos web de punta a punta — base de datos, API, capa de tiempo real e interfaz — y disfruto las partes difíciles: un servidor de medios propio para voz y transmisión de pantalla, recordatorios que funcionan a costo cero, los datos de cada usuario aislados en la propia base. También pasé casi dos años en soporte técnico, resolviendo problemas de usuarios reales en cada turno, y eso moldea cómo construyo.",
     },
     {
       en: "I treat the interface with the same rigor as the architecture. In Hedge, a financial management app, that means clear numbers and frictionless flows; in this portfolio, themes that switch without moving a pixel and animations that respect people who prefer less motion. Detail isn't decoration: it's what makes a product feel trustworthy.",
@@ -52,9 +52,9 @@ export const PROFILE = {
       es: "Trato la interfaz con el mismo rigor que la arquitectura. En Hedge, una app de gestión financiera, eso significa números claros y flujos sin fricción; en este portafolio, temas que cambian sin mover un píxel y animaciones que respetan a quien prefiere menos movimiento. El detalle no es adorno: es lo que hace que un producto inspire confianza.",
     },
     {
-      en: "I'm currently open to proposals — applied AI, internal tools, or products that need to move from prototype to real use. If you have a problem like that, the contact tab is one click away.",
-      pt: "Hoje estou aberto a propostas — IA aplicada, ferramentas internas ou produtos que precisam sair do protótipo e chegar ao uso real. Se você tem um problema assim, a aba de contato está a um clique.",
-      es: "Hoy estoy abierto a propuestas — IA aplicada, herramientas internas o productos que necesitan pasar del prototipo al uso real. Si tienes un problema así, la pestaña de contacto está a un clic.",
+      en: "I'm currently open to full-stack roles and freelance projects — web apps, internal tools, or products that need to move from prototype to real use. If you have a problem like that, the contact tab is one click away.",
+      pt: "Hoje estou aberto a vagas full-stack e projetos freelance — aplicações web, ferramentas internas ou produtos que precisam sair do protótipo e chegar ao uso real. Se você tem um problema assim, a aba de contato está a um clique.",
+      es: "Hoy estoy abierto a puestos full-stack y proyectos freelance — aplicaciones web, herramientas internas o productos que necesitan pasar del prototipo al uso real. Si tienes un problema así, la pestaña de contacto está a un clic.",
     },
   ] as Localized[],
 };
@@ -186,7 +186,7 @@ export const PROJECTS: Project[] = [
     },
     stack: ["Next.js", "TypeScript", "Supabase", "Prisma", "TanStack Query", "Web Push", "Tesseract.js"],
     year: "2026",
-    role: { en: "Full-stack · Freelance", pt: "Full-stack · Freelance", es: "Full-stack · Freelance" },
+    role: { en: "Full-stack · Independent", pt: "Full-stack · Independente", es: "Full-stack · Independiente" },
     status: "wip",
     cover: {
       src: "/projects/wellnessy/d-hoje.jpg",
@@ -304,7 +304,7 @@ export const PROJECTS: Project[] = [
     },
     stack: ["React", "TypeScript", "Supabase", "Claude API", "TanStack Query", "Zustand", "PWA", "GitHub Actions"],
     year: "2026",
-    role: { en: "Full-stack · AI · Freelance", pt: "Full-stack · IA · Freelance", es: "Full-stack · IA · Freelance" },
+    role: { en: "Full-stack · AI · Independent", pt: "Full-stack · IA · Independente", es: "Full-stack · IA · Independiente" },
     status: "live",
     links: { live: "https://apice-ten.vercel.app", repo: "https://github.com/SamuelSousaDEV/apice-publico" },
     cover: {
@@ -380,7 +380,7 @@ export const PROJECTS: Project[] = [
     },
     stack: ["React", "TypeScript", "Supabase", "Tailwind CSS", "Recharts", "Playwright"],
     year: "2025 — 2026",
-    role: { en: "Full-stack · Freelance", pt: "Full-stack · Freelance", es: "Full-stack · Freelance" },
+    role: { en: "Full-stack · Independent", pt: "Full-stack · Independente", es: "Full-stack · Independiente" },
     status: "live",
     links: { live: "https://gethedge.vercel.app", repo: "https://github.com/georgepxto/gestaofinanceira" },
     cover: {
@@ -596,19 +596,29 @@ export const PROJECTS: Project[] = [
 /** Projetos dos cartões da home, nesta ordem (01, 02, 03); slug que não existir vira slot vazio. */
 export const FEATURED = ["dispeaker", "hedge", "apice"];
 
-export type Experience = { period: string; role: Localized; org: string };
+/** `kind` (opcional) aparece depois da organização, traduzido: "Hedge · Projeto independente". */
+export type Experience = { period: string; role: Localized; org: string; kind?: Localized };
+
+const INDEPENDENT: Localized = { en: "Independent project", pt: "Projeto independente", es: "Proyecto independiente" };
 
 /** Da mais recente para a mais antiga. Vazio = o painel mostra "aguardando dados". */
 export const EXPERIENCE: Experience[] = [
   {
+    period: "2025 — 2026",
+    role: { en: "Technical Support Analyst", pt: "Técnico de Suporte", es: "Técnico de Soporte" },
+    org: "OIG Gaming Brasil",
+  },
+  {
     period: "2026",
     role: { en: "Full-stack Developer", pt: "Desenvolvedor Full-stack", es: "Desarrollador Full-stack" },
-    org: "Wellnessy · Freelance",
+    org: "Wellnessy",
+    kind: INDEPENDENT,
   },
   {
     period: "2026",
     role: { en: "Full-stack & AI Developer", pt: "Desenvolvedor Full-stack & IA", es: "Desarrollador Full-stack e IA" },
-    org: "Ápice · Freelance",
+    org: "Ápice",
+    kind: INDEPENDENT,
   },
   {
     period: "2025 — 2026",
@@ -617,7 +627,8 @@ export const EXPERIENCE: Experience[] = [
       pt: "Desenvolvedor Full-stack · com George Peixoto",
       es: "Desarrollador Full-stack · con George Peixoto",
     },
-    org: "Hedge · Freelance",
+    org: "Hedge",
+    kind: INDEPENDENT,
   },
 ];
 
@@ -633,18 +644,21 @@ export const SKILLS: SkillGroup[] = [
   },
   {
     group: { en: "FRONT-END", pt: "FRONT-END", es: "FRONT-END" },
-    items: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "TanStack Query", "Zustand", "GSAP"],
+    items: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "TanStack Query", "Zustand", "GSAP", "Electron"],
   },
   {
     group: { en: "BACK-END & DATA", pt: "BACK-END & DADOS", es: "BACK-END Y DATOS" },
-    items: ["Supabase", "PostgreSQL", "Prisma", "Firebase", "Zod", "Web Push"],
+    items: ["Node.js", "Fastify", "Supabase", "PostgreSQL", "Redis", "Prisma", "Drizzle", "Firebase", "Zod", "Web Push"],
+  },
+  {
+    group: { en: "REAL-TIME", pt: "TEMPO REAL", es: "TIEMPO REAL" },
+    items: ["WebRTC", "mediasoup", "WebSocket"],
   },
   {
     group: { en: "AI & LLM", pt: "IA & LLM", es: "IA Y LLM" },
     items: [
       "Claude API",
       "Claude Code",
-      { en: "Agentic systems", pt: "Sistemas agênticos", es: "Sistemas agénticos" },
       { en: "LLM integration", pt: "Integração com LLM", es: "Integración con LLM" },
       { en: "Prompt engineering", pt: "Engenharia de prompt", es: "Ingeniería de prompts" },
       "OCR (Tesseract.js)",
@@ -652,7 +666,7 @@ export const SKILLS: SkillGroup[] = [
   },
   {
     group: { en: "INFRA & DEPLOY", pt: "INFRA & DEPLOY", es: "INFRA Y DEPLOY" },
-    items: ["Vercel", "GitHub Actions", "PWA", "Sentry", "PostHog"],
+    items: ["Docker", "Linux VPS", "Vercel", "GitHub Actions", "PWA", "Sentry", "PostHog"],
   },
   {
     group: { en: "QUALITY & TOOLS", pt: "QUALIDADE & FERRAMENTAS", es: "CALIDAD Y HERRAMIENTAS" },
@@ -664,7 +678,7 @@ export const SKILLS: SkillGroup[] = [
 export const SKILL_HIGHLIGHTS = ["TypeScript", "React", "Supabase", "Claude API"];
 
 export const MARQUEE: Localized<string[]> = {
-  en: ["AGENTIC SYSTEMS", "DEVELOPER TOOLS", "TYPESCRIPT", "NEXT.JS", "LLM INTEGRATION", "THOUGHTFUL PRODUCTS"],
-  pt: ["SISTEMAS AGÊNTICOS", "FERRAMENTAS DEV", "TYPESCRIPT", "NEXT.JS", "INTEGRAÇÃO COM LLM", "PRODUTOS BEM PENSADOS"],
-  es: ["SISTEMAS AGÉNTICOS", "HERRAMIENTAS DEV", "TYPESCRIPT", "NEXT.JS", "INTEGRACIÓN CON LLM", "PRODUCTOS BIEN PENSADOS"],
+  en: ["FULL-STACK", "TYPESCRIPT", "REACT", "NODE.JS", "REAL-TIME / WEBRTC", "POSTGRESQL", "THOUGHTFUL PRODUCTS"],
+  pt: ["FULL-STACK", "TYPESCRIPT", "REACT", "NODE.JS", "TEMPO REAL / WEBRTC", "POSTGRESQL", "PRODUTOS BEM PENSADOS"],
+  es: ["FULL-STACK", "TYPESCRIPT", "REACT", "NODE.JS", "TIEMPO REAL / WEBRTC", "POSTGRESQL", "PRODUCTOS BIEN PENSADOS"],
 };

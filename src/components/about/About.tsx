@@ -263,7 +263,15 @@ export function About() {
                   <p className="mt-1 text-[17px] text-fg">
                     <Swap v={xp.role} />
                   </p>
-                  <p className="font-mono text-[12px] text-muted">{xp.org}</p>
+                  <p className="font-mono text-[12px] text-muted">
+                    {xp.org}
+                    {xp.kind && (
+                      <>
+                        {" · "}
+                        <Swap v={xp.kind} />
+                      </>
+                    )}
+                  </p>
                 </li>
               ))}
             </ol>
