@@ -616,9 +616,9 @@ html.loader-on {
  * compositor (View Transitions): o navegador fotografa cada camada antes e depois
  * da troca e só faz crossfade de opacidade entre elas. Nada é repintado quadro a
  * quadro, então a troca é contínua, sem saltos, e a mudança de fonte some no crossfade.
- *   1. fundo da sidebar, do topo e do menu mobile ... instantâneo
- *   2. conteúdo, textos da sidebar, grid, efeitos ... 400 ms, ease
- *   3. fundo da área principal ...................... 500 ms, cubic-bezier(.4,0,.2,1)
+ *   1+2. fundos da sidebar e do topo, conteúdo,
+ *        textos, grid, efeitos, menu mobile ......... 400 ms, ease (juntos)
+ *   3.   fundo da área principal .................... 500 ms, cubic-bezier(.4,0,.2,1)
  * Camadas = elementos com view-transition-name (ver .vt-* abaixo).
  */
 .page-bg {
@@ -635,6 +635,7 @@ html.loader-on {
 .vt-content { view-transition-name: content; }
 .vt-sidebar { view-transition-name: sidebar; }
 .vt-sidebar-bg { view-transition-name: sidebar-bg; }
+.vt-topbar { view-transition-name: topbar; }
 .vt-topbar-bg { view-transition-name: topbar-bg; }
 .vt-menu { view-transition-name: menu; }
 .vt-menu-bg { view-transition-name: menu-bg; }
@@ -652,7 +653,6 @@ html.loader-on {
 ::view-transition-group(page-bg) { z-index: 1; }
 ::view-transition-group(texture) { z-index: 2; }
 ::view-transition-group(fx) { z-index: 3; }
-::view-transition-group(topbar-bg) { z-index: 4; }
 ::view-transition-group(content) { z-index: 5; }
 ::view-transition-group(marquee) { z-index: 6; overflow: clip; }
 ::view-transition-group(display-title) { z-index: 6; }
@@ -686,17 +686,33 @@ html.loader-on {
   block-size: auto;
   inset: auto 0 0 auto; /* marca d'água: presa embaixo à direita */
 }
-::view-transition-group(sidebar-bg) { z-index: 7; }
-::view-transition-group(sidebar) { z-index: 8; }
-::view-transition-group(grain) { z-index: 9; }
-::view-transition-group(crt) { z-index: 13; } /* acima do menu, como na página */
-::view-transition-group(menu-bg) { z-index: 11; }
-::view-transition-group(menu) { z-index: 12; }
-::view-transition-group(cursor) { z-index: 14; }
+/*
+ * Barra do topo (sticky): fundo e textos ficam ACIMA do conteúdo e do marquee,
+ * como na página. Embaixo dele, o que rolou para trás da barra (o marquee, em
+ * especial) aparecia por cima dela durante a troca.
+ */
+::view-transition-group(topbar-bg) { z-index: 7; }
+::view-transition-group(topbar) { z-index: 8; }
+::view-transition-group(sidebar-bg) { z-index: 9; }
+::view-transition-group(sidebar) { z-index: 10; }
+::view-transition-group(grain) { z-index: 11; }
+::view-transition-group(menu-bg) { z-index: 12; }
+::view-transition-group(menu) { z-index: 13; }
+::view-transition-group(crt) { z-index: 14; } /* acima do menu, como na página */
+::view-transition-group(cursor) { z-index: 15; }
 
 /* tamanho/posição das camadas não mudam: sem morph, só crossfade */
 html.vt-theme::view-transition-group(*) {
   animation: none;
+}
+/*
+ * Toda foto segura o estado final da animação (fill-mode both). Sem isso, as
+ * camadas de 400 ms terminavam antes do fundo (500 ms) e a foto ANTIGA voltava a
+ * opacidade 1 nesses últimos ~100 ms: o tema anterior piscava no fim da troca.
+ */
+html.vt-theme::view-transition-old(*),
+html.vt-theme::view-transition-new(*) {
+  animation-fill-mode: both !important;
 }
 /* 0. o resto, o grão e o cursor trocam direto (o cursor novo segue o mouse ao vivo) */
 html.vt-theme::view-transition-old(root),
@@ -709,20 +725,21 @@ html.vt-theme::view-transition-new(grain),
 html.vt-theme::view-transition-new(cursor) {
   animation: none;
 }
-/* 1. fundos da sidebar e do topo: instantâneos */
+/*
+ * 1+2. fundos da sidebar e do topo + conteúdo: 400 ms, ease, todos juntos.
+ * Os fundos já foram instantâneos, mas aí a sidebar e a barra ficavam no tema
+ * novo enquanto o conteúdo ainda estava no antigo: um "terceiro tema" piscava.
+ */
 html.vt-theme::view-transition-old(sidebar-bg),
-html.vt-theme::view-transition-old(topbar-bg) {
-  display: none;
-}
 html.vt-theme::view-transition-new(sidebar-bg),
-html.vt-theme::view-transition-new(topbar-bg) {
-  animation: none;
-}
-/* 2. conteúdo: 400 ms, ease */
+html.vt-theme::view-transition-old(topbar-bg),
+html.vt-theme::view-transition-new(topbar-bg),
 html.vt-theme::view-transition-old(content),
 html.vt-theme::view-transition-new(content),
 html.vt-theme::view-transition-old(sidebar),
 html.vt-theme::view-transition-new(sidebar),
+html.vt-theme::view-transition-old(topbar),
+html.vt-theme::view-transition-new(topbar),
 html.vt-theme::view-transition-old(menu),
 html.vt-theme::view-transition-new(menu),
 html.vt-theme::view-transition-old(fx),

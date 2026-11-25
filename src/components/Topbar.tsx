@@ -21,7 +21,7 @@ export function Topbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 isolate border-b border-line">
+      <header className="vt-topbar sticky top-0 z-30 isolate border-b border-line">
         {/* fundo em camada própria: troca na hora, enquanto os textos esmaecem */}
         <div className="vt-topbar-bg absolute inset-0 -z-10 bg-[color-mix(in_srgb,var(--c-bg)_88%,transparent)] backdrop-blur-sm" aria-hidden="true" />
         <div className="flex h-14 items-center justify-between gap-6 px-5 nav:px-8">
